@@ -1,10 +1,9 @@
 <script>
+
+    import Navigation from '$lib/Navigation.svelte';
+
 </script>
 
-<nav>
-    <a sveltekit:prefetch href="/">Home</a>
-    <a sveltekit:prefetch href="/public">Public</a>
-    <a sveltekit:prefetch href="/private">Private</a>
-</nav>
+<Navigation />
 
 <slot />

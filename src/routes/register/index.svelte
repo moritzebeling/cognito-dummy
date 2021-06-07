@@ -35,32 +35,30 @@
 	<title>Sign up • Conduit</title>
 </svelte:head>
 
-<div class="auth-page">
-	<div class="container page">
-		<div class="row">
-			<div class="col-md-6 offset-md-3 col-xs-12">
-				<h1 class="text-xs-center">Sign up</h1>
-				<p class="text-xs-center">
-					<a href="/login">Have an account?</a>
-				</p>
+<h1>Sign up</h1>
+<p>
+	<a href="/login">Have an account?</a>
+</p>
 
-				<ListErrors {errors}/>
+<ListErrors {errors}/>
 
-				<form on:submit|preventDefault={submit}>
-					<fieldset class="form-group">
-						<input class="form-control form-control-lg" type="text" required placeholder="Your Name" bind:value={username}>
-					</fieldset>
-					<fieldset class="form-group">
-						<input class="form-control form-control-lg" type="email" required placeholder="Email" bind:value={email}>
-					</fieldset>
-					<fieldset class="form-group">
-						<input class="form-control form-control-lg" type="password" required placeholder="Password" bind:value={password}>
-					</fieldset>
-					<button class="btn btn-lg btn-primary pull-xs-right">
-						Sign up
-					</button>
-				</form>
-			</div>
-		</div>
-	</div>
-</div>
+<form on:submit|preventDefault={submit}>
+
+	<label>
+		<p>Your Name</p>
+		<input type="text" required placeholder="Your Name" bind:value={username}>
+	</label>
+
+	<label>
+		<p>Email</p>
+		<input type="email" required placeholder="Email" bind:value={email}>
+	</label>
+
+	<label>
+		<p>Choose a secure password</p>
+		<input type="password" required minlength="8" placeholder="Password" bind:value={password}>
+	</label>
+
+	<button>Sign up</button>
+
+</form>
